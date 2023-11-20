@@ -8,6 +8,8 @@ const Home = ({
   addToCart,
   cart,
   removeFromCart,
+  sortLowToHigh,
+  sortHighToLow,
 }) => {
   return (
     <>
@@ -22,6 +24,11 @@ const Home = ({
           id="input"
           onChange={(e) => setInput(e.target.value)}
         />
+        <div>
+          Sort by price:
+          <button onClick={sortLowToHigh}>low to high</button>
+          <button onClick={sortHighToLow}>high to low</button>
+        </div>
       </div>
       <div className="app">
         {data.length > 0 &&

@@ -37,6 +37,16 @@ function App() {
     setCart((prev) => prev.filter((prevItem) => prevItem.id !== item.id));
   };
 
+  const sortLowToHigh = () => {
+    const sortedProducts = data.sort((a, b) => a.price - b.price);
+    setData([...sortedProducts]);
+  };
+
+  const sortHighToLow = () => {
+    const reverseSortedProducts = data.sort((a, b) => b.price - a.price);
+    setData([...reverseSortedProducts]);
+  };
+
   console.log(data);
   console.log(input);
   return (
@@ -53,6 +63,8 @@ function App() {
               cart={cart}
               addToCart={addToCart}
               removeFromCart={removeFromCart}
+              sortLowToHigh={sortLowToHigh}
+              sortHighToLow={sortHighToLow}
             />
           }
         />
